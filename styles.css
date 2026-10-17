@@ -148,15 +148,40 @@ body {
   letter-spacing: -0.05em;
   line-height: 0.99;
   text-align: left;
+  background: linear-gradient(
+    100deg,
+    #f4f4f2 30%,
+    #43ed67 45%,
+    #19c9e7 55%,
+    #f4f4f2 70%
+  );
+  background-size: 250% 100%;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: text-gradient 6s linear infinite;
 }
 
 .hero-copy__green {
   color: #43ed67;
+  -webkit-text-fill-color: #43ed67;
 }
 
 .hero-copy__blue {
   color: #19c9e7;
   white-space: nowrap;
+  -webkit-text-fill-color: #19c9e7;
+}
+
+@keyframes text-gradient {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -50% 0;
+  }
 }
 
 @media (max-width: 900px) {
@@ -240,5 +265,9 @@ body {
 
   .site-nav a {
     transition: none;
+  }
+
+  .hero-copy__text {
+    animation: none;
   }
 }
