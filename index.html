@@ -11,6 +11,7 @@
     <meta name="theme-color" content="#0e0f0e" />
     <title>Iuri Carvalho — Designer gráfico</title>
     <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
@@ -27,27 +28,132 @@
       </nav>
     </header>
 
-    <main id="inicio" class="hero">
-      <div class="hero-layout">
-        <img
-          class="hero-gif"
-          src="./assets/logo.gif"
-          alt="Animação da identidade visual de Iuri Carvalho"
-        />
+    <main>
+      <!-- PRIMEIRA SECÇÃO: APRESENTAÇÃO -->
 
-        <section class="hero-copy" aria-label="Apresentação">
-          <h1 class="hero-copy__greeting" aria-label="Hi!">
-            <span class="hero-copy__letter-h" aria-hidden="true">H</span><span class="hero-copy__greeting-accent" aria-hidden="true"><span class="hero-copy__letter-i">i</span><span class="hero-copy__letter-inverted">i</span></span>
-          </h1>
+      <section id="inicio" class="hero">
+        <div class="hero-layout">
+          <img
+            class="hero-gif"
+            src="./assets/logo.gif"
+            alt="Animação da identidade visual de Iuri Carvalho"
+          />
 
-          <p class="hero-copy__text">
-            Me chamo <span class="hero-copy__green">iuri,</span><br />
-            adoro gatos<br />
-            e sou o seu<br />
-            <span class="hero-copy__blue">designer gráfico.</span>
-          </p>
-        </section>
-      </div>
+          <div class="hero-copy">
+            <h1 class="hero-copy__greeting" aria-label="Hi!">
+              <span class="hero-copy__letter-h" aria-hidden="true">H</span><span class="hero-copy__greeting-accent" aria-hidden="true"><span class="hero-copy__letter-i">i</span><span class="hero-copy__letter-inverted">i</span></span>
+            </h1>
+
+            <p class="hero-copy__text">
+              Me chamo <span class="hero-copy__green">iuri,</span><br />
+              adoro gatos<br />
+              e sou o seu<br />
+              <span class="hero-copy__blue">designer gráfico.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEGUNDA SECÇÃO: PORTFÓLIO -->
+
+      <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
+        <div class="portfolio__glow portfolio__glow--left" aria-hidden="true"></div>
+        <div class="portfolio__glow portfolio__glow--right" aria-hidden="true"></div>
+
+        <div class="portfolio__content">
+          <div class="portfolio__intro">
+            <h2 id="portfolio-title" class="portfolio__title">
+              Ideias que<br />
+              ganham <em>forma.</em>
+            </h2>
+
+            <p class="portfolio__description">
+              Uma seleção de projetos onde criatividade,<br class="desktop-break" />
+              estratégia e design se encontram.
+            </p>
+
+            <a class="portfolio__button" href="#portfolio-projetos">
+              Explorar projetos
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="portfolio__showcase">
+            <button
+              class="portfolio__arrow portfolio__arrow--prev"
+              type="button"
+              aria-label="Ver projetos anteriores"
+              aria-controls="portfolio-projetos"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+
+            <div
+              id="portfolio-projetos"
+              class="portfolio__track"
+              tabindex="0"
+              aria-label="Projetos do portfólio"
+            >
+              <article class="project-card">
+                <div class="project-card__content">
+                  <span class="project-card__number">01 / 03</span>
+
+                  <div class="project-card__bottom">
+                    <span class="project-card__category">
+                      Identidade visual
+                    </span>
+                    <h3 class="project-card__title">
+                      Projeto 01
+                    </h3>
+                    <span class="project-card__plus" aria-hidden="true">+</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card__content">
+                  <span class="project-card__number">02 / 03</span>
+
+                  <div class="project-card__bottom">
+                    <span class="project-card__category">
+                      Design gráfico
+                    </span>
+                    <h3 class="project-card__title">
+                      Projeto 02
+                    </h3>
+                    <span class="project-card__plus" aria-hidden="true">+</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card__content">
+                  <span class="project-card__number">03 / 03</span>
+
+                  <div class="project-card__bottom">
+                    <span class="project-card__category">
+                      Comunicação visual
+                    </span>
+                    <h3 class="project-card__title">
+                      Projeto 03
+                    </h3>
+                    <span class="project-card__plus" aria-hidden="true">+</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <button
+              class="portfolio__arrow portfolio__arrow--next"
+              type="button"
+              aria-label="Ver próximos projetos"
+              aria-controls="portfolio-projetos"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
