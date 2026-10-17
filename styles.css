@@ -141,6 +141,8 @@ body {
 
 .hero-copy__text {
   margin: 0;
+  max-width: 440px;
+  text-wrap: pretty;
   font-size: clamp(2.5rem, 4.3vw, 4.5rem);
   font-weight: 400;
   letter-spacing: -0.055em;
@@ -188,6 +190,7 @@ body {
 
   .hero-copy__text {
     font-size: clamp(2.2rem, 8vw, 3.8rem);
+    max-width: 360px;
   }
 }
 
