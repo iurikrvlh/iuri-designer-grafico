@@ -111,7 +111,7 @@ body {
 .hero-gif {
   display: block;
   justify-self: start;
-  width: 125%;
+  width: 140%;
   height: auto;
   object-fit: contain;
   object-position: left center;
@@ -175,7 +175,7 @@ body {
   }
 
   .hero-gif {
-    width: min(115%, 480px);
+    width: min(125%, 520px);
   }
 
   .hero-copy {
