@@ -111,7 +111,7 @@ body {
 .hero-gif {
   display: block;
   justify-self: start;
-  width: 110%;
+  width: 125%;
   height: auto;
   object-fit: contain;
   object-position: left center;
@@ -141,11 +141,11 @@ body {
 
 .hero-copy__text {
   margin: 0;
-  max-width: 440px;
+  max-width: 480px;
   text-wrap: pretty;
   font-size: clamp(2.5rem, 4.3vw, 4.5rem);
   font-weight: 400;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.1em;
   line-height: 0.99;
   text-align: justify;
 }
@@ -156,6 +156,7 @@ body {
 
 .hero-copy__blue {
   color: #19c9e7;
+  white-space: nowrap;
 }
 
 @media (max-width: 900px) {
@@ -174,7 +175,7 @@ body {
   }
 
   .hero-gif {
-    width: min(100%, 420px);
+    width: min(115%, 480px);
   }
 
   .hero-copy {
@@ -190,7 +191,7 @@ body {
 
   .hero-copy__text {
     font-size: clamp(2.2rem, 8vw, 3.8rem);
-    max-width: 360px;
+    max-width: none;
   }
 }
 
