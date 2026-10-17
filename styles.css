@@ -125,6 +125,7 @@ body {
 
 .hero-copy__greeting {
   margin: 0 0 1.5rem;
+  margin-left: -0.08em;
   font-size: clamp(8rem, 14vw, 13rem);
   font-weight: 400;
   letter-spacing: -0.08em;
@@ -144,6 +145,7 @@ body {
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.99;
+  text-align: justify;
 }
 
 .hero-copy__green {
