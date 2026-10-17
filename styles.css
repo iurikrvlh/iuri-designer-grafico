@@ -141,13 +141,13 @@ body {
 
 .hero-copy__text {
   margin: 0;
-  max-width: 480px;
+  max-width: none;
   text-wrap: pretty;
   font-size: clamp(2.5rem, 4.3vw, 4.5rem);
   font-weight: 400;
-  letter-spacing: -0.1em;
+  letter-spacing: -0.05em;
   line-height: 0.99;
-  text-align: justify;
+  text-align: left;
 }
 
 .hero-copy__green {
