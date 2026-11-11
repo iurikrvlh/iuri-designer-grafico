@@ -1,19 +1,35 @@
 
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-PT">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Iuri Carvalho — designer gráfico. Conheça meu trabalho, serviços e formas de contato." />
-  <meta name="theme-color" content="#0e0f0e" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0e0f0e">
+  <meta
+    name="description"
+    content="Portfólio de Iuri Carvalho, designer gráfico. Identidade visual, branding, social media e comunicação."
+  >
+
   <title>Iuri Carvalho — Designer gráfico</title>
-  <link rel="stylesheet" href="./styles.css" />
+
+  <link rel="stylesheet" href="./styles.css">
   <script src="./script.js" defer></script>
 </head>
 
-<body>
+<body id="top">
+
+  <!-- =====================================
+       CABEÇALHO
+  ====================================== -->
+
   <header class="site-header">
-    <a class="wordmark" href="#inicio" aria-label="Iuri Carvalho, início">
+
+    <a
+      class="wordmark"
+      href="#top"
+      aria-label="Iuri Carvalho — início"
+    >
       <span class="wordmark__name">iuri carvalho</span>
       <span class="wordmark__role">designer gráfico</span>
     </a>
@@ -21,247 +37,1215 @@
     <nav class="site-nav" aria-label="Navegação principal">
       <a href="#portfolio">Portfólio</a>
       <a href="#servicos">Serviços</a>
-      <a href="#contato">Contato</a>
+      <a href="#contato">Contacto</a>
     </nav>
+
   </header>
 
   <main>
-    <!-- APRESENTAÇÃO -->
-    <section id="inicio" class="hero">
+
+    <!-- =====================================
+         HERO
+    ====================================== -->
+
+    <section class="hero" aria-label="Apresentação">
+
       <div class="hero-layout">
-        <img
-          class="hero-gif"
-          src="./assets/logo.gif"
-          alt="Animação da identidade visual de Iuri Carvalho"
-        />
+
+        <div
+          class="hero-gif hero-art"
+          role="img"
+          aria-label="Iuri Carvalho com os seus três gatos e estrelas verdes e azuis"
+        >
+          <svg
+            class="hero-art__scene"
+            viewBox="0 0 1400 1000"
+            width="1400"
+            height="1000"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <defs>
+              <linearGradient id="hero-star-gradient" x1="0" y1="0" x2="0.25" y2="1">
+                <stop offset="0%" stop-color="#57ff57" />
+                <stop offset="48%" stop-color="#27eaa4" />
+                <stop offset="100%" stop-color="#00b7ff" />
+              </linearGradient>
+              <linearGradient id="hero-star-halo-gradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#57ff57" />
+                <stop offset="100%" stop-color="#00b7ff" />
+              </linearGradient>
+              <filter id="hero-star-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="12" />
+              </filter>
+              <path
+                id="hero-star-shape"
+                d="M0-330 77.59-106.79 313.85-101.98 125.54 40.79 193.97 266.98 0 132-193.97 266.98-125.54 40.79-313.85-101.98-77.59-106.79Z"
+                stroke-width="28"
+                stroke-linejoin="round"
+              />
+            </defs>
+
+            <!-- A mesma área e o mesmo centro visual do GIF original. -->
+            <g class="hero-art__star hero-art__star--halo" transform="translate(445 500)">
+              <use
+                href="#hero-star-shape"
+                fill="url(#hero-star-halo-gradient)"
+                stroke="url(#hero-star-halo-gradient)"
+                filter="url(#hero-star-glow)"
+                opacity="0.65"
+              />
+              <use
+                href="#hero-star-shape"
+                fill="url(#hero-star-halo-gradient)"
+                stroke="url(#hero-star-halo-gradient)"
+                opacity="0.45"
+              />
+            </g>
+            <g class="hero-art__star hero-art__star--front" transform="rotate(0 445 470)">
+              <use
+                href="#hero-star-shape"
+                fill="url(#hero-star-gradient)"
+                stroke="url(#hero-star-gradient)"
+                transform="translate(445 500)"
+              />
+            </g>
+
+            <image
+              class="hero-art__photo hero-art__photo--iuri"
+              href="./assets/profile-pic.png"
+              x="104" y="175" width="700" height="700"
+            />
+            <image
+              class="hero-art__photo hero-art__photo--bento"
+              href="./assets/bento.png"
+              x="135" y="220" width="300" height="300"
+            />
+            <image
+              class="hero-art__photo hero-art__photo--bruxinha"
+              href="./assets/bruxinha.png"
+              x="445" y="148" width="280" height="280"
+            />
+            <image
+              class="hero-art__photo hero-art__photo--gatos"
+              href="./assets/gatos.png"
+              x="455" y="574" width="210" height="210"
+            />
+          </svg>
+        </div>
 
         <div class="hero-copy">
-          <h1 class="hero-copy__greeting" aria-label="Hi!">
-            <span class="hero-copy__letter-h" aria-hidden="true">H</span><span class="hero-copy__greeting-accent" aria-hidden="true"><span class="hero-copy__letter-i">i</span><span class="hero-copy__letter-inverted">i</span></span>
+
+          <h1 class="hero-copy__greeting">
+
+            <span class="hero-copy__letter-h">H</span>
+
+            <span class="hero-copy__greeting-accent">
+              <span class="hero-copy__letter-i">i</span>
+              <span class="hero-copy__letter-inverted">i</span>
+            </span>
+
           </h1>
 
           <p class="hero-copy__text">
-            Me chamo <span class="hero-copy__green">iuri,</span><br />
-            adoro gatos<br />
-            e sou o seu<br />
-            <span class="hero-copy__blue">designer gráfico.</span>
+            Me chamo iuri, adoro gatos e sou o seu designer gráfico.
           </p>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- PORTFÓLIO -->
-    <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
-      <div class="portfolio__glow portfolio__glow--left" aria-hidden="true"></div>
-      <div class="portfolio__glow portfolio__glow--right" aria-hidden="true"></div>
+    <!-- =====================================
+         PORTFÓLIO
+    ====================================== -->
+
+    <section
+      class="portfolio"
+      id="portfolio"
+      aria-labelledby="portfolio-title"
+    >
+
+      <div
+        class="portfolio__glow portfolio__glow--left"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="portfolio__glow portfolio__glow--right"
+        aria-hidden="true"
+      ></div>
 
       <div class="portfolio__content">
+
         <div class="portfolio__intro">
-          <h2 id="portfolio-title" class="portfolio__title">
-            Ideias que<br />
-            ganham <em>forma.</em>
+
+          <h2
+            id="portfolio-title"
+            class="portfolio__title"
+          >
+            Ideias que já<br>
+            ganharam forma<span
+              class="portfolio__title-mark portfolio__title-mark--inverted"
+              aria-hidden="true"
+            >i</span>
           </h2>
 
           <p class="portfolio__description">
-            Uma seleção de projetos onde criatividade,<br class="desktop-break" />
-            estratégia e design se encontram.
+            Conheça alguns dos meus projetos.
           </p>
 
-          <a class="portfolio__button" href="#portfolio-projetos">
-            Explorar projetos
-            <span aria-hidden="true">↗</span>
-          </a>
         </div>
 
-        <div class="portfolio__showcase" id="portfolio-projetos">
+        <!-- PAGINAÇÃO -->
+
+        <div
+          class="portfolio__pagination"
+          aria-label="Página do portfólio"
+        >
+
+          <span class="portfolio__current">01</span>
+
+          <span
+            class="portfolio__pagination-line"
+            aria-hidden="true"
+          ></span>
+
+          <span class="portfolio__total">04</span>
+
+        </div>
+
+        <!-- CARROSSEL -->
+
+        <div class="portfolio__showcase">
+
           <button
             class="portfolio__arrow portfolio__arrow--prev"
             type="button"
             aria-label="Projetos anteriores"
-            aria-controls="portfolio-track"
           >
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M19 12H5M11 18L5 12L11 6"
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M15 18L9 12L15 6"
                 stroke="currentColor"
-                stroke-width="1.6"
+                stroke-width="1.8"
                 stroke-linecap="round"
-                stroke-linejoin="round"/>
+                stroke-linejoin="round"
+              />
             </svg>
+
           </button>
 
           <div class="portfolio__viewport">
-            <div class="portfolio__track" id="portfolio-track">
 
-              <!-- PROJETO 01 -->
+            <div class="portfolio__track">
+
+              <!-- =========================
+                   PROJETO 01 — i!
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">01 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/257174581/iuri"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto i!"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/i!.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">01</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Identidade visual</span>
-                    <h3 class="project-card__title">Projeto 01</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Identidade Visual
+                    </span>
+
+                    <h3 class="project-card__title">
+                      i!
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 02 -->
+              <!-- =========================
+                   PROJETO 02 — INVICTUS TEAM
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">02 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/256324279/Invictus-Team-Branding"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto Invictus Team"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/invictus-team.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">02</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Design gráfico</span>
-                    <h3 class="project-card__title">Projeto 02</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Branding
+                    </span>
+
+                    <h3 class="project-card__title">
+                      Invictus Team
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 03 -->
+              <!-- =========================
+                   PROJETO 03 — CD ALVES 1
+                   LINK CORRIGIDO
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">03 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/256237875/Carrossel-CD-ALVES-CICLISMO-x-MATEMA-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto CD Alves Ciclismo X Matema 1"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/cd-alves-1.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">03</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Comunicação visual</span>
-                    <h3 class="project-card__title">Projeto 03</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Social Media — Carrossel para Instagram
+                    </span>
+
+                    <h3 class="project-card__title">
+                      CD Alves Ciclismo X Matema 1
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 04 -->
+              <!-- =========================
+                   PROJETO 04 — CD ALVES 2
+                   LINK CORRIGIDO
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">04 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/256237879/Carrossel-CD-ALVES-CICLISMO-x-MATEMA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto CD Alves Ciclismo X Matema 2"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/cd-alves-2.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">04</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Identidade visual</span>
-                    <h3 class="project-card__title">Projeto 04</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Social Media — Carrossel para Instagram
+                    </span>
+
+                    <h3 class="project-card__title">
+                      CD Alves Ciclismo X Matema 2
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 05 -->
+              <!-- =========================
+                   PROJETO 05 — SC BEIRA-MAR
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">05 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/218750705/Beira-Mar-Graphic-Design"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto SC Beira-Mar"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/beira-mar.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">05</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Design gráfico</span>
-                    <h3 class="project-card__title">Projeto 05</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Social Media
+                    </span>
+
+                    <h3 class="project-card__title">
+                      SC Beira-Mar
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 06 -->
+              <!-- =========================
+                   PROJETO 06 — SC ALBA
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">06 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://behance.net/gallery/209995263/SC-ALBA-Social-Media"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto SC Alba"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/sc-alba.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">06</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Comunicação visual</span>
-                    <h3 class="project-card__title">Projeto 06</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Branding + Social Media
+                    </span>
+
+                    <h3 class="project-card__title">
+                      SC Alba
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 07 -->
+              <!-- =========================
+                   PROJETO 07 — BUYBACK
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">07 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.instagram.com/buyback_portugal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto BuyBack"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/buyback.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">07</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Identidade visual</span>
-                    <h3 class="project-card__title">Projeto 07</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Social Media — Instagram
+                    </span>
+
+                    <h3 class="project-card__title">
+                      BuyBack
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 08 -->
+              <!-- =========================
+                   PROJETO 08 — NOCHA'S
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">08 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/195799897/Nochas-VISUAL-IDENTITY"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto Nocha's"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/nochas.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">08</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Design gráfico</span>
-                    <h3 class="project-card__title">Projeto 08</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Identidade Visual
+                    </span>
+
+                    <h3 class="project-card__title">
+                      Nocha's
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 09 -->
+              <!-- =========================
+                   PROJETO 09 — VOZES DO BERÇO
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">09 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/193165319/Vozes-do-Berco-memorias-de-uma-vivencia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto Vozes do Berço"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/vozes.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">09</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Comunicação visual</span>
-                    <h3 class="project-card__title">Projeto 09</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Design Editorial — Capa de Livro
+                    </span>
+
+                    <h3 class="project-card__title">
+                      Vozes do Berço
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 10 -->
+              <!-- =========================
+                   PROJETO 10 — EUROPUNTER
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">10 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/176697999/EUROPUNTER"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto Europunter"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/europunter.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">10</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Identidade visual</span>
-                    <h3 class="project-card__title">Projeto 10</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Branding
+                    </span>
+
+                    <h3 class="project-card__title">
+                      Europunter
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 11 -->
+              <!-- =========================
+                   PROJETO 11 — SANDUÍCHES
+              ========================== -->
+
               <article class="project-card">
-                <div class="project-card__content">
-                  <span class="project-card__number">11 / 12</span>
+
+                <a
+                  class="project-card__content project-card__link"
+                  href="https://www.behance.net/gallery/196831639/Natis-Cold-Sandwiches"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Abrir projeto Sanduíches Naturais da Nati"
+                >
+
+                  <img
+                    class="project-card__image"
+                    src="./assets/sanduiches.png"
+                    alt=""
+                    loading="lazy"
+                  >
+
+                  <span class="project-card__number">11</span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Design gráfico</span>
-                    <h3 class="project-card__title">Projeto 11</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Flyer
+                    </span>
+
+                    <h3 class="project-card__title">
+                      Sanduíches Naturais<br>da Nati
+                    </h3>
+
+                    <span
+                      class="project-card__plus"
+                      aria-hidden="true"
+                    ></span>
+
                   </div>
-                </div>
+
+                </a>
+
               </article>
 
-              <!-- PROJETO 12 -->
-              <article class="project-card">
+              <!-- =========================
+                   PROJETO 12 — CASA VERMELHA
+                   SUBTÍTULO NA SEGUNDA LINHA
+              ========================== -->
+
+              <article
+                class="project-card project-card--soon"
+                aria-label="Casa Vermelha — O menino que não tinha pais — COMING SOON"
+              >
+
                 <div class="project-card__content">
-                  <span class="project-card__number">12 / 12</span>
+
+                  <span class="project-card__number">
+                    12
+                  </span>
+
                   <div class="project-card__bottom">
-                    <span class="project-card__category">Comunicação visual</span>
-                    <h3 class="project-card__title">Projeto 12</h3>
-                    <span class="project-card__plus" aria-hidden="true"></span>
+
+                    <span class="project-card__category">
+                      Design Editorial — Capa de Livro
+                    </span>
+
+                    <h3 class="project-card__title">
+                      Casa Vermelha<br>
+                      <span class="project-card__subtitle">
+                        O menino que não tinha pais
+                      </span>
+                    </h3>
+
+                    <span class="project-card__soon">
+                      COMING SOON
+                    </span>
+
                   </div>
+
                 </div>
+
               </article>
 
             </div>
+
           </div>
+
+          <!-- SETA SEGUINTE -->
 
           <button
             class="portfolio__arrow portfolio__arrow--next"
             type="button"
-            aria-label="Próximos projetos"
-            aria-controls="portfolio-track"
+            aria-label="Projetos seguintes"
           >
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12H19M13 6L19 12L13 18"
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 18L15 12L9 6"
                 stroke="currentColor"
-                stroke-width="1.6"
+                stroke-width="1.8"
                 stroke-linecap="round"
-                stroke-linejoin="round"/>
+                stroke-linejoin="round"
+              />
             </svg>
+
           </button>
+
         </div>
 
-        <div class="portfolio__pagination" aria-live="polite">
-          <span class="portfolio__current">01</span>
-          <span class="portfolio__pagination-line"></span>
-          <span class="portfolio__total">04</span>
+        <!-- EXPLORAR PROJETOS -->
+
+        <div class="portfolio__action">
+
+          <a
+            class="portfolio__button"
+            href="https://www.behance.net/iurikrvlh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explorar projetos
+            <span aria-hidden="true">↗</span>
+          </a>
+
         </div>
+
       </div>
+
     </section>
+
+    <!-- =====================================
+         SERVIÇOS
+    ====================================== -->
+
+    <section
+      class="services"
+      id="servicos"
+      aria-labelledby="services-title"
+    >
+
+      <div
+        class="services__glow"
+        aria-hidden="true"
+      ></div>
+
+      <div class="services__container">
+
+        <div class="services__left">
+
+          <h2
+            class="services__heading"
+            id="services-title"
+          >
+            serviços:
+          </h2>
+
+          <div class="services__list">
+
+            <div class="services__item">
+              <h3>landing page</h3>
+              <p>
+                Páginas digitais pensadas para comunicar e converter.
+              </p>
+            </div>
+
+            <div class="services__item">
+              <h3>identidade visual</h3>
+              <p>Logotipo + manual de marca.</p>
+            </div>
+
+            <div class="services__item">
+              <h3>branding</h3>
+              <p>
+                Gestão da sua marca em diferentes meios de comunicação.
+              </p>
+            </div>
+
+            <div class="services__item">
+              <h3>social media</h3>
+              <p>Conteúdo para as suas redes sociais.</p>
+            </div>
+
+            <div class="services__item">
+              <h3>mídia física</h3>
+              <p>
+                Flyer, banner, outdoor, cartão de visitas,
+                vestuário, etc.
+              </p>
+            </div>
+
+            <div class="services__item">
+              <h3>edição de fotografia</h3>
+              <p>Tratamento e edição de imagens.</p>
+            </div>
+
+            <div class="services__item">
+              <h3>edição de vídeo</h3>
+              <p>Edição e montagem de conteúdos audiovisuais.</p>
+            </div>
+
+            <div class="services__item">
+              <h3>a sua ideia</h3>
+              <p>
+                Tem um projeto diferente? Vamos dar-lhe forma.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- VÍDEO -->
+
+        <div class="services__right">
+
+          <div class="services__video-container">
+
+            <video
+              class="services__video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              disablepictureinpicture
+              aria-label="Animação visual dos serviços de design"
+            >
+
+              <source
+                src="./assets/animacao-servico.webm"
+                type="video/webm"
+              >
+
+              O teu navegador não suporta a reprodução deste vídeo.
+
+            </video>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         CONTACTO
+    ====================================== -->
+
+    <section
+      class="contact"
+      id="contato"
+      aria-labelledby="contact-title"
+    >
+
+      <div
+        class="contact__glow"
+        aria-hidden="true"
+      ></div>
+
+      <div class="contact__container">
+
+        <div class="contact__intro">
+
+          <p class="contact__eyebrow">
+            VAMOS CONVERSAR?
+          </p>
+
+          <h2
+            class="contact__title"
+            id="contact-title"
+          >
+            Vamos discutir a sua
+            <span>ideia!</span>
+          </h2>
+
+          <p class="contact__description">
+            Não precisas de ter tudo definido: podemos
+            encontrar a melhor solução juntos.
+          </p>
+
+          <a
+            class="contact__whatsapp"
+            href="https://wa.me/351936995533"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <svg
+              class="contact__whatsapp-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+
+              <path
+                d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.5-4.7A8.5 8.5 0 1 1 20.5 11.7Z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+              <path
+                d="M8.6 8.2c.3-.3.6-.3.9 0l1.1 1.4c.2.3.2.6 0 .9l-.6.7c.6 1.2 1.5 2.1 2.7 2.7l.7-.6c.3-.2.6-.2.9 0l1.4 1.1c.3.3.3.6 0 .9-.5.6-1.1.9-1.8.8-3.2-.5-5.8-3.1-6.3-6.3-.1-.7.2-1.3 1-1.6Z"
+                fill="currentColor"
+              />
+
+            </svg>
+
+            Conversar pelo WhatsApp
+
+          </a>
+
+        </div>
+
+        <!-- FORMULÁRIO -->
+
+        <div class="contact__form-shell">
+
+          <p class="contact__form-eyebrow">
+            PEDIDO DE CONTACTO
+          </p>
+
+          <h3 class="contact__form-title">
+            Qual é o teu desafio?
+          </h3>
+
+          <p class="contact__form-lead">
+            Conta-me um pouco sobre o teu projeto.
+          </p>
+
+          <form
+            class="contact__form"
+            name="contacto"
+            method="POST"
+            action="/?contacto=enviado#contato"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+
+            <input
+              type="hidden"
+              name="form-name"
+              value="contacto"
+            >
+
+            <p class="contact__honeypot">
+              <label>
+                Não preencher:
+                <input name="bot-field">
+              </label>
+            </p>
+
+            <div class="contact__field">
+
+              <label for="contact-name">
+                Nome <span>*</span>
+              </label>
+
+              <input
+                id="contact-name"
+                name="nome"
+                type="text"
+                placeholder="O teu nome"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+            <div class="contact__fields-two">
+
+              <div class="contact__field">
+
+                <label for="contact-email">
+                  Email <span>*</span>
+                </label>
+
+                <input
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  placeholder="O teu email"
+                  autocomplete="email"
+                  required
+                >
+
+              </div>
+
+              <div class="contact__field">
+
+                <label for="contact-phone">
+                  Telefone
+                  <span class="contact__optional">
+                    (opcional)
+                  </span>
+                </label>
+
+                <input
+                  id="contact-phone"
+                  name="telefone"
+                  type="tel"
+                  placeholder="O teu contacto"
+                  autocomplete="tel"
+                >
+
+              </div>
+
+            </div>
+
+            <div class="contact__field">
+
+              <label for="contact-message">
+                Mensagem <span>*</span>
+              </label>
+
+              <textarea
+                id="contact-message"
+                name="mensagem"
+                placeholder="Fala-me sobre a tua ideia..."
+                required
+              ></textarea>
+
+            </div>
+
+            <label class="contact__consent">
+
+              <input
+                type="checkbox"
+                name="consentimento"
+                value="sim"
+                required
+              >
+
+              <span>
+                Concordo que os meus dados sejam utilizados
+                para responder a este pedido de contacto.
+              </span>
+
+            </label>
+
+            <button
+              class="contact__submit"
+              type="submit"
+            >
+              Enviar mensagem
+              <span aria-hidden="true">↗</span>
+            </button>
+
+            <p
+              class="contact__feedback"
+              hidden
+              role="status"
+            >
+              A tua mensagem foi enviada.
+              Obrigado pelo contacto!
+            </p>
+
+            <p class="contact__fineprint">
+              Os dados enviados serão utilizados apenas
+              para responder ao teu pedido.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
+
+  <footer class="site-footer">
+
+    <div class="site-footer__container">
+
+      <div class="site-footer__top">
+
+        <div class="site-footer__brand">
+
+          <a
+            class="site-footer__name"
+            href="#top"
+          >
+            iuri carvalho
+          </a>
+
+        </div>
+
+        <div class="site-footer__contacts">
+
+          <p class="site-footer__label">
+            Contacto
+          </p>
+
+          <a
+            class="site-footer__contact-link"
+            href="mailto:krvlh.design@gmai.com"
+          >
+            krvlh.design@gmai.com
+          </a>
+
+          <a
+            class="site-footer__contact-link"
+            href="https://wa.me/351936995533"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            +351 936 995 533
+          </a>
+
+        </div>
+
+        <div class="site-footer__social">
+
+          <p class="site-footer__label">
+            Projetos
+          </p>
+
+          <a
+            class="site-footer__behance"
+            href="https://www.behance.net/iurikrvlh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Portfólio
+            <span aria-hidden="true">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="site-footer__bottom">
+
+        <p>
+          © 2026 Iuri Carvalho.
+          Todos os direitos reservados.
+        </p>
+
+        <a href="#top">
+          Voltar ao topo ↑
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>
