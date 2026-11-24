@@ -160,7 +160,7 @@
           </h1>
 
           <p class="hero-copy__text">
-            Chamo-me Iuri, adoro gatos e sou o teu designer gráfico.
+            Chamo-me iuri, adoro gatos e sou o teu designer gráfico.
           </p>
 
         </div>
@@ -995,31 +995,75 @@
 
         </div>
 
-        <!-- VÍDEO -->
+        <!-- ANIMAÇÃO DOS SERVIÇOS -->
 
         <div class="services__right">
 
-          <div class="services__video-container">
+          <div class="services__animation-container">
 
-            <video
-              class="services__video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="auto"
-              disablepictureinpicture
+            <svg
+              class="services__animation"
+              viewBox="0 0 800 1200"
+              width="800"
+              height="1200"
+              role="img"
               aria-label="Animação visual dos serviços de design"
+              focusable="false"
             >
-
-              <source
-                src="./assets/animacao-servico.webm"
-                type="video/webm"
-              >
-
-              O teu navegador não suporta a reprodução deste vídeo.
-
-            </video>
+              <defs>
+                <linearGradient id="services-star-front-gradient" gradientUnits="userSpaceOnUse"
+                  x1="-33.352" y1="102.160" x2="40.333" y2="-123.541">
+                  <stop offset="0%" stop-color="#00b7ff" />
+                  <stop offset="100%" stop-color="#57ff57" />
+                </linearGradient>
+                <linearGradient id="services-star-echo-gradient" gradientUnits="userSpaceOnUse"
+                  x1="-40.567" y1="121.450" x2="46.887" y2="-140.373">
+                  <stop offset="0%" stop-color="#00b7ff" />
+                  <stop offset="100%" stop-color="#57ff57" />
+                </linearGradient>
+                <path id="services-star-shape" d="M124.200 0.000 L38.768 28.167 L38.380 118.121 L-14.808 45.575 L-100.480 73.003 L-47.920 0.000 L-100.480 -73.003 L-14.808 -45.575 L38.380 -118.121 L38.768 -28.167 Z"
+                  stroke-width="16.05" stroke-linejoin="round" />
+                <filter id="services-star-glow" filterUnits="userSpaceOnUse"
+                  x="-200" y="-200" width="400" height="400"
+                  color-interpolation-filters="sRGB">
+                  <feGaussianBlur stdDeviation="8.663" />
+                </filter>
+                <g id="services-star-motion">
+                  <g class="services__star-front" transform="translate(207.4 222.3) rotate(148.429)">
+                    <use href="#services-star-shape" fill="url(#services-star-front-gradient)"
+                      stroke="url(#services-star-front-gradient)" filter="url(#services-star-glow)" opacity="0.885" />
+                    <use href="#services-star-shape" fill="url(#services-star-front-gradient)"
+                      stroke="url(#services-star-front-gradient)" />
+                  </g>
+                  <g class="services__star-echo" transform="translate(213 221.2) rotate(178.322)">
+                    <use href="#services-star-shape" fill="url(#services-star-echo-gradient)"
+                      stroke="url(#services-star-echo-gradient)" filter="url(#services-star-glow)" opacity="0.545" />
+                    <use href="#services-star-shape" fill="url(#services-star-echo-gradient)"
+                      stroke="url(#services-star-echo-gradient)" opacity="0.455" />
+                  </g>
+                </g>
+              </defs>
+              <g class="services__stars" aria-hidden="true">
+                <use href="#services-star-motion" />
+                <use href="#services-star-motion" transform="translate(366.841 270.974)" />
+                <use href="#services-star-motion" transform="translate(6.874 562.114)" />
+                <use href="#services-star-motion" transform="translate(363.435 754.077)" />
+              </g>
+              <g class="services__heads" aria-hidden="true">
+              <image class="services__head" href="./assets/bento.png"
+                x="-500" y="-500" width="1000" height="1000"
+                transform="translate(207.07 211.18) scale(0.2548)" />
+              <image class="services__head" href="./assets/bruxinha.png"
+                x="-500" y="-500" width="1000" height="1000"
+                transform="translate(574.58 489.51) scale(0.262)" />
+              <image class="services__head" href="./assets/profile-pic.png"
+                x="-500" y="-500" width="1000" height="1000"
+                transform="translate(214.51 784.61) scale(0.23)" />
+              <image class="services__head" href="./assets/gatos.png"
+                x="-500" y="-500" width="1000" height="1000"
+                transform="translate(575.67 955.43) scale(0.2194)" />
+              </g>
+            </svg>
 
           </div>
 
