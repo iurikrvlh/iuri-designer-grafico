@@ -2290,12 +2290,13 @@ textarea:focus-visible {
   /* SERVIÇOS */
 
   .services {
-    padding: 64px 20px 72px;
+    padding: 64px 20px 32px;
   }
 
   .services__container {
     grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
+    /* Equilibra os 32px finais dos Serviços + 40px iniciais do contacto. */
+    gap: 72px;
   }
 
   .services__heading {
@@ -2322,7 +2323,8 @@ textarea:focus-visible {
   }
 
   .services__right {
-    display: block;
+    display: grid;
+    place-items: center;
     width: 100%;
     padding-top: 0;
     transform: none;
@@ -2338,7 +2340,7 @@ textarea:focus-visible {
   .services__animation {
     width: 100%;
     height: auto;
-    max-height: clamp(300px, 100vw, 420px);
+    max-height: clamp(330px, 110vw, 462px);
     object-fit: contain;
     transform: scale(1.1);
     transform-origin: center;
