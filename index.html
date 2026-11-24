@@ -13,7 +13,7 @@
 
   <title>Iuri Carvalho — Designer gráfico</title>
 
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=20261116-about-natural">
   <script src="./script.js" defer></script>
 </head>
 
@@ -60,6 +60,7 @@
           <svg
             class="hero-art__scene"
             viewBox="0 0 1400 1000"
+            preserveAspectRatio="xMinYMid slice"
             width="1400"
             height="1000"
             aria-hidden="true"
@@ -78,6 +79,15 @@
               <filter id="hero-star-glow" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="12" />
               </filter>
+              <filter
+                id="hero-star-glow-mobile"
+                filterUnits="userSpaceOnUse"
+                primitiveUnits="userSpaceOnUse"
+                x="-380" y="-395" width="760" height="735"
+                color-interpolation-filters="linearRGB"
+              >
+                <feGaussianBlur in="SourceGraphic" stdDeviation="12" />
+              </filter>
               <path
                 id="hero-star-shape"
                 d="M0-330 77.59-106.79 313.85-101.98 125.54 40.79 193.97 266.98 0 132-193.97 266.98-125.54 40.79-313.85-101.98-77.59-106.79Z"
@@ -89,6 +99,7 @@
             <!-- A mesma área e o mesmo centro visual do GIF original. -->
             <g class="hero-art__star hero-art__star--halo" transform="translate(445 500)">
               <use
+                class="hero-art__glow"
                 href="#hero-star-shape"
                 fill="url(#hero-star-halo-gradient)"
                 stroke="url(#hero-star-halo-gradient)"
@@ -113,8 +124,9 @@
 
             <image
               class="hero-art__photo hero-art__photo--iuri"
-              href="./assets/profile-pic.png"
-              x="104" y="175" width="700" height="700"
+              href="./assets/sorriso.png"
+              x="-33.5" y="28.5" width="903" height="903"
+              preserveAspectRatio="xMidYMid meet"
             />
             <image
               class="hero-art__photo hero-art__photo--bento"
@@ -148,7 +160,7 @@
           </h1>
 
           <p class="hero-copy__text">
-            Me chamo iuri, adoro gatos e sou o seu designer gráfico.
+            Chamo-me Iuri, adoro gatos e sou o teu designer gráfico.
           </p>
 
         </div>
@@ -193,7 +205,7 @@
           </h2>
 
           <p class="portfolio__description">
-            Conheça alguns dos meus projetos.
+            Conhece alguns dos meus projetos.
           </p>
 
         </div>
@@ -242,7 +254,12 @@
 
           </button>
 
-          <div class="portfolio__viewport">
+          <div
+            class="portfolio__viewport"
+            role="region"
+            aria-label="Projetos do portfólio"
+            tabindex="0"
+          >
 
             <div class="portfolio__track">
 
@@ -822,6 +839,82 @@
     </section>
 
     <!-- =====================================
+         ABOUT ME
+    ====================================== -->
+
+    <section
+      class="about"
+      id="sobre"
+      aria-labelledby="about-title"
+    >
+
+      <div class="about__container">
+
+        <h2 class="about__title" id="about-title">
+          <span class="about__title-word">ABOUT ME</span>
+        </h2>
+
+        <figure class="about__portrait">
+          <img
+            class="about__portrait-image"
+            src="./assets/WhatsApp Image 2026-11-16 at 20.17.32.jpeg?v=20261116-cropped"
+            alt="Retrato de Iuri Carvalho"
+            width="1536"
+            height="1587"
+            loading="lazy"
+            decoding="async"
+          >
+        </figure>
+
+        <div class="about__content">
+
+          <div class="about__body">
+            <p class="about__intro">
+              Chamo-me Iuri Carvalho, sou cidadão-designer luso-brasileiro, vivo no Porto e conto com mais de quatro anos de experiência profissional na área do design.
+            </p>
+            <p>
+              Sou licenciado em Arte e Design, com minor em Design, pelo Instituto Politécnico de Bragança, pós-graduado em Web Front-End pela Universidade Europeia e, atualmente, frequento o Mestrado em Design Industrial e de Produto na Universidade do Porto.
+            </p>
+            <p>
+              Ao longo da minha experiência, tenho explorado diferentes áreas do design, desde a identidade visual e o design editorial à comunicação digital e impressa, redes sociais, UX/UI, fotografia, vídeo e motion design. O contacto com diferentes mercados e públicos deu-me uma visão abrangente da profissão e a capacidade de adaptar cada projeto às suas necessidades.
+            </p>
+            <p>
+              Para mim, <strong>design é projeto</strong>. Antes de pôr mãos à obra, pegar no papel e na caneta ou abrir qualquer software, é preciso compreender o contexto, estudar as necessidades do cliente e identificar o problema que queremos resolver. Só depois começa a procura pela solução mais adequada. Afinal, o design não se resume ao resultado visual, mas a todo o pensamento que o torna possível.
+            </p>
+          </div>
+
+          <blockquote class="about__quote">
+            <p>“Design é<br> projeto.”</p>
+            <footer>Alexandre Wollner, o pai do design moderno brasileiro.</footer>
+          </blockquote>
+
+          <nav class="about__actions" aria-label="Mais sobre Iuri Carvalho">
+            <a class="about__cta about__cta--portfolio" href="#portfolio">
+              Portfólio
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M5 19 19 5M5 5h14v14" />
+              </svg>
+            </a>
+            <a
+              class="about__cta about__cta--linkedin"
+              href="https://www.linkedin.com/in/iuri-carvalho-1045882bb/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                <path d="M5 19 19 5M5 5h14v14" />
+              </svg>
+            </a>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
          SERVIÇOS
     ====================================== -->
 
@@ -844,57 +937,57 @@
             class="services__heading"
             id="services-title"
           >
-            serviços:
+            Serviços
           </h2>
 
           <div class="services__list">
 
             <div class="services__item">
-              <h3>landing page</h3>
+              <h3>Landing page</h3>
               <p>
                 Páginas digitais pensadas para comunicar e converter.
               </p>
             </div>
 
             <div class="services__item">
-              <h3>identidade visual</h3>
-              <p>Logotipo + manual de marca.</p>
+              <h3>Identidade visual</h3>
+              <p>Logótipo + manual de marca.</p>
             </div>
 
             <div class="services__item">
-              <h3>branding</h3>
+              <h3>Branding</h3>
               <p>
-                Gestão da sua marca em diferentes meios de comunicação.
+                Gestão da tua marca em diferentes meios de comunicação.
               </p>
             </div>
 
             <div class="services__item">
-              <h3>social media</h3>
-              <p>Conteúdo para as suas redes sociais.</p>
+              <h3>Social media</h3>
+              <p>Conteúdo para as tuas redes sociais.</p>
             </div>
 
             <div class="services__item">
-              <h3>mídia física</h3>
+              <h3>Meios físicos</h3>
               <p>
-                Flyer, banner, outdoor, cartão de visitas,
+                Flyer, banner, outdoor, cartão de visita,
                 vestuário, etc.
               </p>
             </div>
 
             <div class="services__item">
-              <h3>edição de fotografia</h3>
+              <h3>Edição de fotografia</h3>
               <p>Tratamento e edição de imagens.</p>
             </div>
 
             <div class="services__item">
-              <h3>edição de vídeo</h3>
+              <h3>Edição de vídeo</h3>
               <p>Edição e montagem de conteúdos audiovisuais.</p>
             </div>
 
             <div class="services__item">
-              <h3>a sua ideia</h3>
+              <h3>A tua ideia</h3>
               <p>
-                Tem um projeto diferente? Vamos dar-lhe forma.
+                Tens um projeto diferente? Vamos dar-lhe forma.
               </p>
             </div>
 
@@ -955,16 +1048,16 @@
 
         <div class="contact__intro">
 
-          <p class="contact__eyebrow">
-            VAMOS CONVERSAR?
-          </p>
+          <div class="contact__logo">
+            <img src="./assets/i!.png" alt="Iuri Carvalho" width="2400" height="3000" loading="lazy">
+          </div>
 
           <h2
             class="contact__title"
             id="contact-title"
           >
-            Vamos discutir a sua
-            <span>ideia!</span>
+            Vamos discutir<br>
+            a tua <span>ideia</span>
           </h2>
 
           <p class="contact__description">
@@ -972,38 +1065,67 @@
             encontrar a melhor solução juntos.
           </p>
 
-          <a
-            class="contact__whatsapp"
-            href="https://wa.me/351936995533"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <div class="contact__channels">
 
-            <svg
-              class="contact__whatsapp-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
+            <a
+              class="contact__whatsapp"
+              href="https://wa.me/351936995533"
+              target="_blank"
+              rel="noopener noreferrer"
             >
 
-              <path
-                d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.5-4.7A8.5 8.5 0 1 1 20.5 11.7Z"
-                stroke="currentColor"
-                stroke-width="1.7"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
+              <svg
+                class="contact__whatsapp-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
 
-              <path
-                d="M8.6 8.2c.3-.3.6-.3.9 0l1.1 1.4c.2.3.2.6 0 .9l-.6.7c.6 1.2 1.5 2.1 2.7 2.7l.7-.6c.3-.2.6-.2.9 0l1.4 1.1c.3.3.3.6 0 .9-.5.6-1.1.9-1.8.8-3.2-.5-5.8-3.1-6.3-6.3-.1-.7.2-1.3 1-1.6Z"
-                fill="currentColor"
-              />
+                <path
+                  d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.5-4.7A8.5 8.5 0 1 1 20.5 11.7Z"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
 
-            </svg>
+                <path
+                  d="M8.6 8.2c.3-.3.6-.3.9 0l1.1 1.4c.2.3.2.6 0 .9l-.6.7c.6 1.2 1.5 2.1 2.7 2.7l.7-.6c.3-.2.6-.2.9 0l1.4 1.1c.3.3.3.6 0 .9-.5.6-1.1.9-1.8.8-3.2-.5-5.8-3.1-6.3-6.3-.1-.7.2-1.3 1-1.6Z"
+                  fill="currentColor"
+                />
 
-            Conversar pelo WhatsApp
+              </svg>
 
-          </a>
+              Conversar pelo WhatsApp
+
+            </a>
+
+            <nav class="contact__socials" aria-label="Redes de Iuri Carvalho">
+              <a
+                class="contact__social"
+                href="https://www.linkedin.com/in/iuri-carvalho-1045882bb/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn de Iuri Carvalho"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path d="M5.2 3.5a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6ZM3.7 9h3v11h-3V9Zm5.5 0h2.9v1.5c.7-1.1 1.8-1.8 3.4-1.8 3 0 4.1 1.8 4.1 5V20h-3v-5.7c0-1.7-.4-2.8-2-2.8-1.7 0-2.4 1.2-2.4 3.1V20h-3V9Z" />
+                </svg>
+              </a>
+              <a
+                class="contact__social"
+                href="https://www.behance.net/iurikrvlh"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Behance de Iuri Carvalho"
+              >
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                  <path d="M3 6h4.5a3 3 0 0 1 0 6H3V6Zm0 6h5a3 3 0 0 1 0 6H3v-6Zm12-6h5m-5.8 8H22a4 4 0 0 0-8 0v.5a4 4 0 0 0 7.2 2.4" />
+                </svg>
+              </a>
+            </nav>
+
+          </div>
 
         </div>
 
@@ -1011,17 +1133,9 @@
 
         <div class="contact__form-shell">
 
-          <p class="contact__form-eyebrow">
-            PEDIDO DE CONTACTO
-          </p>
-
           <h3 class="contact__form-title">
-            Qual é o teu desafio?
+            Conta-me um pouco sobre o teu projeto
           </h3>
-
-          <p class="contact__form-lead">
-            Conta-me um pouco sobre o teu projeto.
-          </p>
 
           <form
             class="contact__form"
@@ -1055,7 +1169,7 @@
                 id="contact-name"
                 name="nome"
                 type="text"
-                placeholder="O teu nome"
+                placeholder="Nome"
                 autocomplete="name"
                 required
               >
@@ -1067,14 +1181,14 @@
               <div class="contact__field">
 
                 <label for="contact-email">
-                  Email <span>*</span>
+                  E-mail <span>*</span>
                 </label>
 
                 <input
                   id="contact-email"
                   name="email"
                   type="email"
-                  placeholder="O teu email"
+                  placeholder="E-mail"
                   autocomplete="email"
                   required
                 >
@@ -1094,7 +1208,7 @@
                   id="contact-phone"
                   name="telefone"
                   type="tel"
-                  placeholder="O teu contacto"
+                  placeholder="Telefone (opcional)"
                   autocomplete="tel"
                 >
 
@@ -1111,7 +1225,7 @@
               <textarea
                 id="contact-message"
                 name="mensagem"
-                placeholder="Fala-me sobre a tua ideia..."
+                placeholder="Mensagem"
                 required
               ></textarea>
 

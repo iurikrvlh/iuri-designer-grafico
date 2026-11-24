@@ -2,6 +2,71 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   /* ========================================
+     ABOUT — TÍTULO NUMA LINHA À LARGURA DA COMPOSIÇÃO
+  ======================================== */
+
+  const aboutTitle = document.querySelector(".about__title");
+  const aboutWord = aboutTitle?.querySelector(".about__title-word");
+
+  if (aboutTitle && aboutWord) {
+    const aboutMeasure = document.createElement("canvas").getContext("2d");
+
+    function fitAboutTitle() {
+      const availableWidth = aboutTitle.getBoundingClientRect().width;
+      const styles = window.getComputedStyle(aboutTitle);
+      const fontSize = parseFloat(styles.fontSize);
+
+      if (!aboutMeasure || availableWidth <= 0) {
+        return;
+      }
+
+      // Ajustar o título completo sem o deixar ultrapassar a composição.
+      // A escala de 1000 px reduz os arredondamentos da medição tipográfica.
+      const letterSpacingRatio = parseFloat(styles.letterSpacing) / fontSize;
+      const wordSpacingRatio = parseFloat(styles.wordSpacing) / fontSize;
+      aboutMeasure.font = `${styles.fontWeight} 1000px ${styles.fontFamily}`;
+      aboutMeasure.letterSpacing = `${letterSpacingRatio * 1000}px`;
+      aboutMeasure.wordSpacing = `${wordSpacingRatio * 1000}px`;
+      const metrics = aboutMeasure.measureText(aboutWord.textContent.trim());
+      const inkWidth = metrics.actualBoundingBoxLeft + metrics.actualBoundingBoxRight;
+
+      if (inkWidth <= 0) {
+        return;
+      }
+
+      const scale = availableWidth / inkWidth;
+      const fittedSize = 1000 * scale;
+
+      if (Math.abs(fittedSize - fontSize) > 0.01) {
+        aboutTitle.style.setProperty("--about-title-size", `${fittedSize}px`);
+      }
+
+      // Compensar também o arredondamento dos glifos à dimensão final.
+      aboutMeasure.font = `${styles.fontWeight} ${fittedSize}px ${styles.fontFamily}`;
+      aboutMeasure.letterSpacing = `${letterSpacingRatio * fittedSize}px`;
+      aboutMeasure.wordSpacing = `${wordSpacingRatio * fittedSize}px`;
+      const fittedMetrics = aboutMeasure.measureText(aboutWord.textContent.trim());
+      const inkScale = availableWidth / (fittedMetrics.actualBoundingBoxLeft + fittedMetrics.actualBoundingBoxRight);
+      aboutTitle.style.setProperty("--about-title-scale", inkScale);
+
+      aboutTitle.querySelectorAll("span").forEach((word) => {
+        const wordMetrics = aboutMeasure.measureText(word.textContent.trim());
+        word.style.setProperty("--about-word-offset", `${wordMetrics.actualBoundingBoxLeft * inkScale}px`);
+      });
+    }
+
+    fitAboutTitle();
+    document.fonts.ready.then(fitAboutTitle);
+
+    if ("ResizeObserver" in window) {
+      const aboutTitleObserver = new ResizeObserver(fitAboutTitle);
+      aboutTitleObserver.observe(aboutTitle);
+    } else {
+      window.addEventListener("resize", fitAboutTitle);
+    }
+  }
+
+  /* ========================================
      ANIMAÇÃO DO HERO — MOVIMENTOS DO GIF
   ======================================== */
 
@@ -256,6 +321,115 @@ document.addEventListener("DOMContentLoaded", () => {
 
     nextButton.addEventListener("click", () => {
       move(1);
+    });
+
+    /* GESTOS NO MOBILE — MANTÉM A ROLAGEM VERTICAL E OS TOQUES NOS LINKS */
+
+    const mobileCarousel = window.matchMedia("(max-width: 640px)");
+    let gesture = null;
+    let suppressClickUntil = 0;
+
+    viewport.addEventListener("pointerdown", (event) => {
+      if (
+        !mobileCarousel.matches ||
+        event.pointerType === "mouse" ||
+        !event.isPrimary
+      ) {
+        gesture = null;
+        return;
+      }
+
+      suppressClickUntil = 0;
+      gesture = {
+        id: event.pointerId,
+        x: event.clientX,
+        y: event.clientY,
+        horizontal: false
+      };
+    });
+
+    viewport.addEventListener("pointermove", (event) => {
+      if (!gesture || gesture.id !== event.pointerId) {
+        return;
+      }
+
+      const deltaX = event.clientX - gesture.x;
+      const deltaY = event.clientY - gesture.y;
+
+      if (!gesture.horizontal) {
+        if (Math.max(Math.abs(deltaX), Math.abs(deltaY)) < 12) {
+          return;
+        }
+
+        if (Math.abs(deltaX) <= Math.abs(deltaY) * 1.25) {
+          gesture = null;
+          return;
+        }
+
+        gesture.horizontal = true;
+        viewport.setPointerCapture(event.pointerId);
+      }
+
+      if (event.cancelable) {
+        event.preventDefault();
+      }
+    });
+
+    viewport.addEventListener("pointerup", (event) => {
+      if (!gesture || gesture.id !== event.pointerId) {
+        return;
+      }
+
+      const deltaX = event.clientX - gesture.x;
+      const deltaY = event.clientY - gesture.y;
+      const horizontal = gesture.horizontal;
+      gesture = null;
+
+      if (horizontal) {
+        suppressClickUntil = Date.now() + 400;
+
+        const threshold = Math.max(36, viewport.clientWidth * 0.12);
+
+        if (
+          mobileCarousel.matches &&
+          Math.abs(deltaX) >= threshold &&
+          Math.abs(deltaX) > Math.abs(deltaY) * 1.25
+        ) {
+          move(deltaX < 0 ? 1 : -1);
+        }
+      }
+
+      if (viewport.hasPointerCapture(event.pointerId)) {
+        viewport.releasePointerCapture(event.pointerId);
+      }
+    });
+
+    viewport.addEventListener("pointercancel", () => {
+      gesture = null;
+    });
+
+    viewport.addEventListener("lostpointercapture", (event) => {
+      if (event.target === viewport && gesture?.id === event.pointerId) {
+        gesture = null;
+      }
+    });
+
+    viewport.addEventListener("click", (event) => {
+      if (event.detail !== 0 && Date.now() < suppressClickUntil) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }, true);
+
+    viewport.addEventListener("keydown", (event) => {
+      if (event.target !== viewport) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        move(event.key === "ArrowRight" ? 1 : -1);
+      }
     });
 
     /* REDIMENSIONAMENTO */
