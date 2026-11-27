@@ -939,6 +939,11 @@ textarea:focus-visible {
   line-height: 1.05;
 }
 
+.about__quote-accent {
+  /* Mandali omite este carácter; evita o negrito da fonte de substituição. */
+  font-weight: 400;
+}
+
 .about__quote footer {
   margin-top: 14px;
   font-size: 0.75rem;
